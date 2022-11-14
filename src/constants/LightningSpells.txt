@@ -1,0 +1,5 @@
+Name/cost/required level/damage/mana cost/type
+Lightning_Dagger/400/1/500/150/lightning
+Thunder_Blast/750/4/900/400/lightning
+Electric_Arrows/550/5/650/200/lightning
+Spark_Needles/500/2/600/200/lightning

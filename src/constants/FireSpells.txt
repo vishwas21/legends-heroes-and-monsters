@@ -1,0 +1,6 @@
+Name/cost/required level/damage/mana cost/type
+Flame_Tornado/700/4/850/300/fire
+Breath_of_Fire/350/1/450/100/fire
+Heat_Wave/450/2/600/150/fire
+Lava_Comet/800/7/1000/550/fire
+Hell_Storm/600/3/950/600/fire

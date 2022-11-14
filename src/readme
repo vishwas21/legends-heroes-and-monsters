@@ -1,0 +1,39 @@
+Legends The Heroes and Monsters : Vishwas Bhaktavatsala
+
+---------------------------------------------------------------------------
+vishwasb@bu.edu
+U74206902
+----------------------------------------------------------------------------
+I have desgined an Object structure using Abstract Classes, factory pattern method and also added few features for designing the outlook.
+Please refer to the below description of my classes and methods included. Additionally i have attached the output below. Please raise volume to listen to sound.
+
+Main.Java, which is my driver class for the whole game, which calls LegendGameDriver class. Im calling different functions of various classes to this LegendGamedriver class.
+
+Pawn, specific pawn for each cell.
+Cell, This class has all functions to build a piece of the board.
+CellType, This has the specifications like Market spots, Empty Spots and blocked Spots for the cells in the Board.
+LegendCells, This will further use the Cell and CellType class to implement a cell required for this game.
+item, This class holds the default details of all the items and its functionality.
+Item factory ,Design pattern to create items.
+Item Generator, Item generator Class generates items using item Class.
+Item type,a Enum Class to store types of Items in the market.
+Layout, generic class to have the layout methods, which can be used by other classes.
+Lengends Layout, using the Layout Class this implements the game layout for this game
+LegendsNPC, Non player character Class that is used for all other players to use and call characters.
+LegendsHero, Heroes character Class
+LegendsMonster, Monster Character Class
+Symbols, TextColors, few common classes to use for outlook of the game.
+Weapons, Spells, potions, Armor Classes writtem to derive funcalities specific to only these classes.
+SpellType and potionType, Class Written for specially differnt types of spells and potions.
+
+## How to compile and run
+---------------------------------------------------------------------------
+1. Navigate to the directory "Legends" after unzipping the files
+2. Run the following instructions:
+<Example below>
+javac -d bin src/*.java
+java -cp bin Legends
+
+## Input/Output Example
+---------------------------------------------------------------------------
+My Input and Output are as below for this program [Input marked with #Input#]

@@ -1,6 +1,7 @@
 Legends The Heroes and Monsters : Vishwas Bhaktavatsala
 
 ---------------------------------------------------------------------------
+Vishwas Bhaktavatsala
 vishwasb@bu.edu
 U74206902
 ----------------------------------------------------------------------------
@@ -32,8 +33,4 @@ SpellType and potionType, Class Written for specially differnt types of spells a
 2. Run the following instructions:
 <Example below>
 javac -d bin src/*.java
-java -cp bin Legends
-
-## Input/Output Example
----------------------------------------------------------------------------
-My Input and Output are as below for this program [Input marked with #Input#]
+java -cp bin Main

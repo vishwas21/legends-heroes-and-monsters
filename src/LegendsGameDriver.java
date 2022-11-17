@@ -1,4 +1,8 @@
 import javax.rmi.CORBA.Util;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -155,8 +159,15 @@ public class LegendsGameDriver {
         System.out.print(TextColors.RESET);
     }
 
-    public static void playGame() throws IOException {
+    public static void playGame() throws Exception {
+
         do {
+            File soundFile = new File("" + System.getProperty("user.dir") + "/src/sounds/" + "Akatsuki.wav");
+            Clip clip = AudioSystem.getClip();
+            AudioInputStream ais = AudioSystem.getAudioInputStream(soundFile);
+            clip.open(ais);
+            clip.start();
+
             try {
                 printChar(TextColors.CYAN, '*', 60);
                 System.out.print(TextColors.BLUE + " Legends: " + TextColors.PURPLE + "Heroes " + TextColors.GREEN + "and " + TextColors.RED + "Monsters " + TextColors.RESET + "");
@@ -194,13 +205,13 @@ public class LegendsGameDriver {
 
                 lgLayout.getGameLayout()[teamHero.getPositionX()][teamHero.getPositionY()].placeTeam(teamHero);
                 System.out.println("This is the latest state of the layout with the hero team present :)");
-                lgLayout.displayLayout();
 
                 String playedMove;
                 System.out.println("\nAll the best\n");
 
                 while (true) {
                     try {
+                        lgLayout.displayLayout();
                         System.out.println("\nFollowing are the rules for movements in the game!! Please press the right button to play the game!");
                         System.out.println("W - Move Up");
                         System.out.println("A - Move Left");

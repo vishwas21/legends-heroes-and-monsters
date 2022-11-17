@@ -35,7 +35,7 @@ public class MarketDriver {
 
     public static void armorDriver() throws IOException {
         System.out.println("Here are the list of Armors which you can buy from");
-        Utils.displayWeapons(LegendsGameDriver.getMarketItemMap().get(ItemType.ARMOR));
+        Utils.displayArmors(LegendsGameDriver.getMarketItemMap().get(ItemType.ARMOR));
 
         System.out.print("Please select a Armor which you would like to buy: ");
         int itemNumber = Integer.parseInt(Utils.input.readLine()) - 1;
@@ -49,20 +49,20 @@ public class MarketDriver {
             return;
         }
 
-        int weaponPrice = LegendsGameDriver.getMarketItemMap().get(ItemType.ARMOR).get(itemNumber).getPrice();
+        int armorPrice = LegendsGameDriver.getMarketItemMap().get(ItemType.ARMOR).get(itemNumber).getPrice();
 
-        if (((LegendsHero)(LegendsGameDriver.getTeamHero().getPawnAtIndex(customerHero))).getGold() < weaponPrice) {
+        if (((LegendsHero)(LegendsGameDriver.getTeamHero().getPawnAtIndex(customerHero))).getGold() < armorPrice) {
             System.out.println("The hero you have chosen does not have enough gold to buy the armor you have chosen!");
             return;
         }
 
-        ((LegendsHero)(LegendsGameDriver.getTeamHero().getPawnAtIndex(customerHero))).setGold(((LegendsHero)(LegendsGameDriver.getTeamHero().getPawnAtIndex(customerHero))).getGold() - weaponPrice);
+        ((LegendsHero)(LegendsGameDriver.getTeamHero().getPawnAtIndex(customerHero))).setGold(((LegendsHero)(LegendsGameDriver.getTeamHero().getPawnAtIndex(customerHero))).getGold() - armorPrice);
         ((LegendsHero)(LegendsGameDriver.getTeamHero().getPawnAtIndex(customerHero))).getItemInventory().get(ItemType.ARMOR).add(((Armor)(LegendsGameDriver.getMarketItemMap().get(ItemType.ARMOR).get(itemNumber))).clone());
     }
 
     public static void potionsDriver() throws IOException {
         System.out.println("Here are the list of potions which you can buy from");
-        Utils.displayWeapons(LegendsGameDriver.getMarketItemMap().get(ItemType.POTION));
+        Utils.displayPotions(LegendsGameDriver.getMarketItemMap().get(ItemType.POTION));
 
         System.out.print("Please select a potion which you would like to buy: ");
         int itemNumber = Integer.parseInt(Utils.input.readLine()) - 1;
@@ -71,25 +71,25 @@ public class MarketDriver {
             throw new IllegalStateException("Invalid Item selected");
         }
 
-        int weaponPrice = LegendsGameDriver.getMarketItemMap().get(ItemType.POTION).get(itemNumber).getPrice();
+        int potionsPrice = LegendsGameDriver.getMarketItemMap().get(ItemType.POTION).get(itemNumber).getPrice();
 
         if (((LegendsHero)(LegendsGameDriver.getTeamHero().getPawnAtIndex(customerHero))).getLevel() < LegendsGameDriver.getMarketItemMap().get(ItemType.POTION).get(itemNumber).getLevel()) {
             System.out.println("Hero level is not high enough to buy this item!! Please try again");
             return;
         }
 
-        if (((LegendsHero)(LegendsGameDriver.getTeamHero().getPawnAtIndex(customerHero))).getGold() < weaponPrice) {
+        if (((LegendsHero)(LegendsGameDriver.getTeamHero().getPawnAtIndex(customerHero))).getGold() < potionsPrice) {
             System.out.println("The hero you have chosen does not have enough gold to buy the potion you have chosen!");
             return;
         }
 
-        ((LegendsHero)(LegendsGameDriver.getTeamHero().getPawnAtIndex(customerHero))).setGold(((LegendsHero)(LegendsGameDriver.getTeamHero().getPawnAtIndex(customerHero))).getGold() - weaponPrice);
+        ((LegendsHero)(LegendsGameDriver.getTeamHero().getPawnAtIndex(customerHero))).setGold(((LegendsHero)(LegendsGameDriver.getTeamHero().getPawnAtIndex(customerHero))).getGold() - potionsPrice);
         ((LegendsHero)(LegendsGameDriver.getTeamHero().getPawnAtIndex(customerHero))).getItemInventory().get(ItemType.POTION).add(((Potion)(LegendsGameDriver.getMarketItemMap().get(ItemType.POTION).get(itemNumber))).clone());
     }
 
     public static void spellDriver() throws IOException {
         System.out.println("Here are the list of spells which you can buy from");
-        Utils.displayWeapons(LegendsGameDriver.getMarketItemMap().get(ItemType.SPELL));
+        Utils.displaySpells(LegendsGameDriver.getMarketItemMap().get(ItemType.SPELL));
 
         System.out.print("Please select a spell which you would like to buy: ");
         int itemNumber = Integer.parseInt(Utils.input.readLine()) - 1;
@@ -103,14 +103,14 @@ public class MarketDriver {
             return;
         }
 
-        int weaponPrice = LegendsGameDriver.getMarketItemMap().get(ItemType.SPELL).get(itemNumber).getPrice();
+        int spellPrice = LegendsGameDriver.getMarketItemMap().get(ItemType.SPELL).get(itemNumber).getPrice();
 
-        if (((LegendsHero)(LegendsGameDriver.getTeamHero().getPawnAtIndex(customerHero))).getGold() < weaponPrice) {
+        if (((LegendsHero)(LegendsGameDriver.getTeamHero().getPawnAtIndex(customerHero))).getGold() < spellPrice) {
             System.out.println("The hero you have chosen does not have enough gold to buy the spell you have chosen!");
             return;
         }
 
-        ((LegendsHero)(LegendsGameDriver.getTeamHero().getPawnAtIndex(customerHero))).setGold(((LegendsHero)(LegendsGameDriver.getTeamHero().getPawnAtIndex(customerHero))).getGold() - weaponPrice);
+        ((LegendsHero)(LegendsGameDriver.getTeamHero().getPawnAtIndex(customerHero))).setGold(((LegendsHero)(LegendsGameDriver.getTeamHero().getPawnAtIndex(customerHero))).getGold() - spellPrice);
         ((LegendsHero)(LegendsGameDriver.getTeamHero().getPawnAtIndex(customerHero))).getItemInventory().get(ItemType.SPELL).add(((Spell)(LegendsGameDriver.getMarketItemMap().get(ItemType.SPELL).get(itemNumber))).clone());
     }
 

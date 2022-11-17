@@ -2,6 +2,10 @@
  * BattleDriver class consists of all methods to run the battle
  */
 
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import java.io.File;
 import java.io.IOException;
 
 public class BattleDriver {
@@ -98,6 +102,15 @@ public class BattleDriver {
 
             if (monster.getCurrentHitPoints() <= attackDamage) {
                 System.out.println("" + monster.getName() + " died!! Congratulations!");
+                try {
+                    File soundFile = new File("" + System.getProperty("user.dir") + "/src/sounds/" + "monster.wav");
+                    Clip clip = AudioSystem.getClip();
+                    AudioInputStream ais = AudioSystem.getAudioInputStream(soundFile);
+                    clip.open(ais);
+                    clip.start();
+                } catch (Exception error) {
+
+                }
                 monster.setCurrentHitPoints(monster.getMaxHitPoints());
                 teamMonster.getPawnList()[selectedMonster] = null;
                 if (checkBattleStatus(teamHero, teamMonster) == -1) {
@@ -317,11 +330,13 @@ public class BattleDriver {
         }
     }
 
-    public static Integer startBattle() throws IOException {
+    public static Integer startBattle() throws Exception {
         System.out.println("Welcome to the Thunderdome!! Let's Battle!");
-//        InputStream in = Files.newInputStream(Paths.get(System.getProperty("user.dir") + "/src/sounds/Akatsuki.wav"));
-//        AudioStream as = new AudioStream(in);
-//        AudioPlayer.player.start(as);
+        File soundFile = new File("" + System.getProperty("user.dir") + "/src/sounds/" + "battle.wav");
+        Clip clip = AudioSystem.getClip();
+        AudioInputStream ais = AudioSystem.getAudioInputStream(soundFile);
+        clip.open(ais);
+        clip.start();
 
         LegendsGameDriver.initTeamMonster();
 

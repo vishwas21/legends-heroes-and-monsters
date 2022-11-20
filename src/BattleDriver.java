@@ -2,9 +2,15 @@
  * BattleDriver class consists of all methods to run the battle
  */
 
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
+/**
+ * Battle Driver: This is the driver class for the whole battle module in this game which runs all the required functionalities and has all the common functions for battle
+ *
+ * @author Vishwas B
+ * @version 1.0.0
+ * @since November 5, 2022
+ */
+
+import javax.sound.sampled.*;
 import java.io.File;
 import java.io.IOException;
 
